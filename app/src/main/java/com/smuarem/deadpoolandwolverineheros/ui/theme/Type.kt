@@ -23,8 +23,8 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = MarvelFont,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
+        fontSize = 20.sp,
+        lineHeight = 26.sp,
         letterSpacing = 0.5.sp
     ),
     /**
@@ -33,7 +33,7 @@ val Typography = Typography(
     displayLarge = TextStyle(
         fontFamily = MarvelBoldFont,
         fontWeight = FontWeight.Bold,
-        fontSize = 30.sp,
+        fontSize = 50.sp,
     ),
     /**
      * Font For Hero Name
@@ -42,7 +42,7 @@ val Typography = Typography(
         fontFamily = MarvelBoldItalicFont,
         fontWeight = FontWeight.Bold,
         fontStyle = FontStyle.Italic,
-        fontSize = 20.sp,
+        fontSize = 30.sp,
     ),
     /**
      * Font For Actor Name
@@ -51,7 +51,7 @@ val Typography = Typography(
         fontFamily = MarvelItalicFont,
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Italic,
-        fontSize = 18.sp,
+        fontSize = 26.sp,
     )
     /* Other default text styles to override
     titleLarge = TextStyle(
