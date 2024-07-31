@@ -1,6 +1,7 @@
 package com.smuarem.deadpoolandwolverineheros.view.components
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -20,9 +21,9 @@ fun ExpandIcon(
 
     IconButton(onClick = onClick, modifier = modifier) {
         Icon(
-            imageVector = Icons.Filled.ExpandMore,
+            imageVector =  if (expanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.primary
+            tint = MaterialTheme.colorScheme.secondaryContainer
         )
     }
 
@@ -32,6 +33,6 @@ fun ExpandIcon(
 @Composable
 fun ExpandIconPreview() {
     AppTheme {
-        ExpandIcon(expanded = true, onClick = {})
+        ExpandIcon(expanded = false, onClick = {})
     }
 }

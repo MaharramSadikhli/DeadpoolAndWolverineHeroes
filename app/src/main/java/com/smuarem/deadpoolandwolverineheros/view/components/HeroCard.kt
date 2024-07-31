@@ -5,14 +5,14 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -27,21 +27,26 @@ fun HeroCard(
     @StringRes heroActor: Int,
     @DrawableRes heroImage: Int,
     expanded: Boolean,
+    onClick: () -> Unit,
     @StringRes heroDescription: Int,
     modifier: Modifier = Modifier
 ) {
     Card(modifier = modifier.padding(8.dp)) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.background(MaterialTheme.colorScheme.primary)) {
             HeroImage(image = heroImage, heroName = heroName)
             HeroInfo(heroName = heroName, heroActor = heroActor)
-            ExpandIcon(expanded = true, onClick = { /*TODO*/ })
+            Spacer(modifier = Modifier.weight(1f))
+            ExpandIcon(expanded = expanded, onClick = onClick)
         }
         if (expanded) {
-            HeroDescription(
-                heroDescription = heroDescription, modifier = Modifier.padding(
-                    dimensionResource(id = ConstDimension.PADDING_MEDIUM)
+            Row(modifier = Modifier.background(MaterialTheme.colorScheme.scrim).fillMaxWidth()) {
+                HeroDescription(
+                    heroDescription = heroDescription,
+                    modifier = Modifier
+                        .padding(dimensionResource(id = ConstDimension.PADDING_MEDIUM))
                 )
-            )
+            }
+
         }
     }
 }
@@ -58,6 +63,7 @@ fun HeroCardPreview() {
                 heroActor = deadpool.heroActor,
                 heroImage = deadpool.heroImage,
                 expanded = true,
+                onClick = {},
                 heroDescription = deadpool.heroSuperpower
             )
             HeroCard(
@@ -65,6 +71,7 @@ fun HeroCardPreview() {
                 heroActor = deadpool.heroActor,
                 heroImage = deadpool.heroImage,
                 expanded = true,
+                onClick = {},
                 heroDescription = deadpool.heroSuperpower
             )
         }
