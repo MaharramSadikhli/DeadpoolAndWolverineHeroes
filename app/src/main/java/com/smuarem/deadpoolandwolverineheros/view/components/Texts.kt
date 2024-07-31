@@ -2,11 +2,14 @@ package com.smuarem.deadpoolandwolverineheros.view.components
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.smuarem.deadpoolandwolverineheros.ui.constant.ConstDimension
 import com.smuarem.deadpoolandwolverineheros.ui.constant.ConstTypography
 
 /**
@@ -16,7 +19,7 @@ import com.smuarem.deadpoolandwolverineheros.ui.constant.ConstTypography
  */
 @Composable
 fun TopAppBar(modifier: Modifier = Modifier) {
-    Text(text = "Deadpool & Wolverine", style = ConstTypography.TOP_APP_BAR)
+    Text(text = "Deadpool & Wolverine", style = ConstTypography.TOP_APP_BAR, modifier = modifier)
 }
 
 
@@ -28,7 +31,11 @@ fun TopAppBar(modifier: Modifier = Modifier) {
  */
 @Composable
 fun HeroName(@StringRes heroName: Int, modifier: Modifier = Modifier) {
-    Text(text = stringResource(id = heroName), style = ConstTypography.HERO_NAME)
+    Text(
+        text = stringResource(id = heroName),
+        style = ConstTypography.HERO_NAME,
+        modifier = modifier
+    )
 }
 
 
@@ -40,7 +47,11 @@ fun HeroName(@StringRes heroName: Int, modifier: Modifier = Modifier) {
  */
 @Composable
 fun HeroActor(@StringRes heroActor: Int, modifier: Modifier = Modifier) {
-    Text(text = stringResource(id = heroActor), style = ConstTypography.HERO_ACTOR)
+    Text(
+        text = stringResource(id = heroActor),
+        style = ConstTypography.HERO_ACTOR,
+        modifier = modifier
+    )
 }
 
 
@@ -52,7 +63,11 @@ fun HeroActor(@StringRes heroActor: Int, modifier: Modifier = Modifier) {
  */
 @Composable
 fun HeroDescription(@StringRes heroDescription: Int, modifier: Modifier = Modifier) {
-    Text(text = stringResource(id = heroDescription), style = ConstTypography.DESCRIPTION)
+    Text(
+        text = stringResource(id = heroDescription),
+        style = ConstTypography.DESCRIPTION,
+        modifier = modifier
+    )
 }
 
 
