@@ -1,7 +1,7 @@
 Deadpool & Wolverine
 ==================================
 
-The Deadpool & Wolverine app is a list of hero photos with information about them including their name, the name of the actor who played, and super powers. This app also uses Material Design to create a beautiful app experience for the user.
+The Deadpool & Wolverine app is a list of hero photos with information about them including their name, the name of the actor who played, and super powers. This app also uses Material Design to create a beautiful app experience for the user. And also used Marvel, Deadpool color palette, and Marvel font family.
 
 Tools
 --------------
